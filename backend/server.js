@@ -3,6 +3,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 const workoutRouters = require("./routes/workout");
 
@@ -12,6 +13,7 @@ const app = express();
 // middleware
 // => fancy name of code that execute between getting a request on server and us sending a response
 app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log({ path: req.path, method: req.method });
