@@ -3,7 +3,7 @@ const WorkoutDetails = ({ workout }) => {
     <div className="workout-details">
       <h4>{workout.title}</h4>
       <p>
-        <strong>Load (Kg): </strong> {workout.title}
+        <strong>Load (Kg) : </strong> {workout.load}
       </p>
       <p>
         <strong>Reps : </strong> {workout.reps}
