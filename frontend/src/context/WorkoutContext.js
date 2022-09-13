@@ -1,5 +1,9 @@
 import { createContext, useReducer } from "react";
-import { CREATE_WORKOUT, SET_WORKOUTS } from "./WorkoutContextTypes";
+import {
+  CREATE_WORKOUT,
+  DELETE_WORKOUT,
+  SET_WORKOUTS,
+} from "./WorkoutContextTypes";
 
 export const WorkContext = createContext();
 
@@ -12,6 +16,12 @@ export const workoutsReducer = (state, { type, payload }) => {
     case CREATE_WORKOUT:
       return {
         workouts: [payload, ...state.workouts],
+      };
+    case DELETE_WORKOUT:
+      return {
+        workouts: state.workouts.filter(
+          (workout) => workout._id !== payload._id
+        ),
       };
 
     default:
