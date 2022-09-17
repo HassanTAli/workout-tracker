@@ -42,3 +42,6 @@ public/
 
 #Dotenv File
 .env
+
+#vscode
+.vscode
